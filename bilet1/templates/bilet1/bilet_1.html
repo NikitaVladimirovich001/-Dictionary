@@ -1,0 +1,24 @@
+{% extends 'bilet1/main.html' %}
+{% load static %}
+{% block title %}Билет 1{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    <h3>Задание 1</h3>
+<h3>Разработать веб-приложение "Словарь". Сделать ListView и DetailView для слов. Реализовать функционал добавления, редактирования и удаления слов и их определений. Каждое слово должно иметь уникальное название и одно или несколько определений. Реализовать возможность поиска слова по его названию и просмотра всех определений для найденного слова.
+Для каждого слова должна быть добавлена картинка, отражающая его смысл.</h3>
+
+    <form action="{% url 'saerch' %}" method="get">
+        <input type="search" type="text" name="q" placeholder="Поиск слов">
+        <button type="submit">Найти</button>
+    </form>
+
+    {% for el in news %}
+        <div class="alert alert-warning">
+            <h2 class="text">{{ el.title }}</h2>
+            <h3 class="text">{{ el.description }}</h3>
+            <img src="{{dictionary.image.url}}" alt="" class="rty">
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <link href="{{STATIC_URL}}bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet">
+    <title>{% block title %}Главная{% endblock %}</title>
+</head>
+<body>
+    <div class="header">
+        <p class="logo">Экзамен Django</p>
+        <div class="nav">
+            <ul class="spisok">
+                <a href="{% url 'home' %}" class="urls">Главная</a>
+                <a href="{% url 'bilet_1' %}" class="urls">Словарь</a>
+                <a class="urls">Билет 2</a>
+                <a class="urls">Билет 3</a>
+                <a class="urls">Билет 4</a>
+                <a class="urls">Билет 5</a>
+            </ul>
+        </div>
+    </div>
+    {% block content %}
+        <div class="xexe">
+            <img class="rt" src="{% static '/img/2.jpg'%}">
+            <img class="ry" src="{% static '/img/1234.jpg'%}">
+        </div>
+    {% endblock %}
+
+    <div class="footer"></div>
+
+</body>
+</html>
